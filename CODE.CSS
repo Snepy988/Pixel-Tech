@@ -1,0 +1,144 @@
+
+:root {
+    --bg-body: #0b0b0e;
+    --bg-card: #16161d;
+    --bg-input: #0f0f13;
+    --accent: #9d7cf4;
+    --text-main: #ffffff;
+    --success: #00e676;
+    --error: #ff5252;
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 15px;
+    text-align: center;
+    background: var(--bg-card);
+    border-bottom: 1px solid #29292e;
+}
+
+.logo { font-size: 1.4rem; font-weight: 800; color: var(--accent); letter-spacing: 2px; }
+
+.container {
+    padding: 15px;
+    display: flex;
+    flex-direction: column; /* Tudo empilhado no celular */
+    gap: 20px;
+}
+
+/* Card de Saldo */
+.balance-card {
+    background: linear-gradient(135deg, #6246af, #9d7cf4);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(157, 124, 244, 0.3);
+}
+
+.balance-card h2 { margin: 10px 0 0; font-size: 2rem; }
+
+/* Caixas de Conteúdo */
+.transfer-box, .history-box, .product-card {
+    background: var(--bg-card);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #29292e;
+}
+
+/* Inputs e Botões Grandes para Celular */
+input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: var(--bg-input);
+    border: 1px solid #29292e;
+    color: white;
+    border-radius: 10px;
+    font-size: 16px; /* Evita zoom automático no iPhone */
+}
+
+.transfer-btn {
+    width: 100%;
+    padding: 16px;
+    background: var(--success);
+    border: none;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Grid de Produtos (1 por linha no celular) */
+.products-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.product-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.product-img {
+    font-size: 2.5rem;
+    background: var(--bg-input);
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.product-info h3 { margin: 0; font-size: 1.1rem; }
+.price { color: var(--success); font-weight: bold; margin: 5px 0; }
+
+.btn-buy {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Histórico */
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #29292e;
+}
+.login-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--bg-body);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.login-box {
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid var(--accent);
+    width: 90%;
+    max-width: 400px;
+}
+
+#pin-input {
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: 10px;
+    margin: 20px 0;
+}
