@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Pixel Tech | Mobile</title>
+    <link rel="stylesheet" href="CODE.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+<header>
+    <div class="logo">PIXEL TECH</div>
+</header>
+
+<div class="container">
+    <aside class="sidebar">
+        <div class="balance-card">
+            <small>Saldo Disponível</small>
+            <h2 id="saldo-atual">R$ 5.000,00</h2>
+        </div>
+        
+        <div class="transfer-box">
+            <h3>Transferir</h3>
+            <input type="text" id="destinatario" placeholder="Usuário ou Chave Pix">
+            <input type="number" id="valor-transfer" placeholder="Valor R$">
+            <button class="transfer-btn" onclick="transferir()">Confirmar Envio</button>
+            <p id="msg-feedback"></p>
+        </div>
+    </aside>
+
+    <main>
+        <h3 class="section-title">Loja Pixel</h3>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-img">📸</div>
+                <div class="product-info">
+                    <h3>GPU Neon RTX</h3>
+                    <p class="price">R$ 450,00</p>
+                    <button class="btn-buy" onclick="comprar('GPU Neon RTX', 450)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">⌨️</div>
+                <div class="product-info">
+                    <h3>Teclado Mecânico</h3>
+                    <p class="price">R$ 120,00</p>
+                    <button class="btn-buy" onclick="comprar('Teclado Mecânico', 120)">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="history-box">
+        <h3>Atividade Recente</h3>
+        <div id="lista-atividades">
+            <p class="empty-msg">Nenhuma atividade recente.</p>
+        </div>
+    </section>
+</div>
+  
+  <div id="login-screen" class="login-overlay">
+    <div class="login-box">
+        <div class="logo">PIXEL TECH</div>
+        <p>Digite seu PIN de segurança</p>
+        <input type="password" id="pin-input" placeholder="****" maxlength="4">
+        <button onclick="verificarPin()" class="transfer-btn">Acessar Conta</button>
+        <p id="login-error" style="color: var(--error); font-size: 14px; margin-top: 10px;"></p>
+    </div>
+</div>
+
+<div id="main-content" style="display:none">
+    </div>
+
+
+<script src="COde.js"></script>
+</body>
+</html>
